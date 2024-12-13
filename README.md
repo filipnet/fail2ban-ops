@@ -32,6 +32,8 @@ Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/filipnet/fail2ban-ops.git
+cd fail2ban-ops
+chmod +x fail2ban-ops-*
 ```
 
 ## Usage
