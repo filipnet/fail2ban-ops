@@ -1,4 +1,5 @@
 # fail2ban-ops
+<img src="images/logo.webp" alt="Logo" width="30%" align="right" hspace="30" vspace="20"/>
 fail2ban-ops is a collection of scripts designed to assist with the management, monitoring, and automation of Fail2Ban. These tools allow system administrators to easily check the status of Fail2Ban jails, unban IP addresses, and analyze blocked IP statistics in a firewall environment. 
 
 <!-- TOC -->
@@ -15,7 +16,6 @@ fail2ban-ops is a collection of scripts designed to assist with the management, 
     - [License](#license)
 
 <!-- /TOC -->
-
 
 ## Features
 - Check the status of Fail2Ban jails and banned IPs.
