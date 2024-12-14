@@ -52,6 +52,17 @@ Removes an IP address (IPv4/IPv6) or DNS-resolved IPs from a Fail2Ban jail.
 ./fail2ban-ops-unban.sh <IP/Hostname> <Jail-Name>
 ```
 
+Example: Prevent Locking Yourself Out with Dynamic PPPoE IPs
+
+If you are using a dynamic IP address (e.g., assigned via PPPoE from your ISP), Fail2Ban may occasionally block your own IP due to false-positive detections. To prevent permanently locking yourself out of your server, you can use the fail2ban-ops-unban.sh script to periodically unban your IP. This works by targeting a dynamic DNS hostname that always resolves to your current public IP.
+
+Cron Job Example (runs every 5 minutes):
+
+```bash
+*/5 * * * * /root/fail2ban-ops/fail2ban-ops-unban.sh your-hostname.dyndns.org portscan >/dev/null 2>&1
+```
+This ensures that your current IP, even when dynamically assigned, is regularly removed from the specified Fail2Ban jail (e.g., portscan), preventing accidental lockouts.
+
 ### fail2ban-ops-stats.sh
 Analyzes and displays blocked IP statistics from firewall logs based on Fail2Ban activity.
 
